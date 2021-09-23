@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "Okuda";
+    src: url("fonts/Okuda.otf") format("opentype");
+}
+
+body {
+    background-color: black;
+}
+
+.lcars-container, .lcars-container .row {
+    height: 100%;
+}
+
+.lcars-container {
+    width: calc(100vh * 1.777777777777778) !important;
+    height: 100vh;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Okuda",sans-serif !important;
+    letter-spacing: 1.4px;
+}
+
+.lcars-header{
+    padding: 0 !important;
+}
+
+.lcars-sidebar div div span {
+    font-size: 1.4rem;
+    padding-right: 12px;
+}
+
+.bg-blue-0 {
+    background-color: #ccddff;
+}
+
+.bg-blue-10 {
+    background-color: #5599ff;
+}
+.text-blue-10 {
+    color: #5599ff;
+}
+
+.bg-blue-20 {
+    background-color: #3366ff;
+}
+
+
+
+.bg-blue-30 {
+    background-color: #0011ee;
+}
+
+.bg-blue-40 {
+    background-color: #0411b6;
+}
+
+.bg-beige {
+    background-color: #bbaa55;
+}
+
+.bg-purple {
+    background-color: #9999ff;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+/** VERTICAL COLUMNS START **/
+
+.row-v {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.row-v>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: text-bottom;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+
+.col-v-0-5 {
+    flex: 0 0 auto;
+    height: 4.166666665%;
+}
+
+.col-v-1 {
+    flex: 0 0 auto;
+    height: 8.33333333%;
+}
+
+.col-v-2 {
+    flex: 0 0 auto;
+    height: 16.66666667%;
+}
+
+.col-v-2-5 {
+    flex: 0 0 auto;
+    height: 20.833333335%;
+}
+
+.col-v-3 {
+    flex: 0 0 auto;
+    height: 25%;
+}
+
+.col-v-3-5 {
+    flex: 0 0 auto;
+    height: 29.166666665%;
+}
+
+.col-v-4 {
+    flex: 0 0 auto;
+    height: 33.33333333%;
+}
+
+.col-v-5 {
+    flex: 0 0 auto;
+    height: 41.66666667%;
+}
+
+.col-v-6 {
+    flex: 0 0 auto;
+    height: 50%;
+}
+
+.col-v-7 {
+    flex: 0 0 auto;
+    height: 58.33333333%;
+}
+
+.col-v-7-5 {
+    flex: 0 0 auto;
+    height: 62.5%;
+}
+
+.col-v-8 {
+    flex: 0 0 auto;
+    height: 66.66666667%;
+}
+
+.col-v-8-5 {
+    flex: 0 0 auto;
+    height: 70.833333335%;
+}
+
+.col-v-9 {
+    flex: 0 0 auto;
+    height: 75%;
+}
+
+.col-v-10 {
+    flex: 0 0 auto;
+    height: 83.33333333%;
+}
+
+.col-v-11 {
+    flex: 0 0 auto;
+    height: 91.66666667%;
+}
+
+.col-v-12 {
+    flex: 0 0 auto;
+    height: 100%;
+}
+
+/** VERTICAL COLUMNS END **/
