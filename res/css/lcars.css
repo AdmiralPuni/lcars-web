@@ -18,11 +18,11 @@ body {
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
-    font-family: "Okuda",sans-serif !important;
+    font-family: "Okuda", sans-serif !important;
     letter-spacing: 1.4px;
 }
 
-.lcars-header{
+.lcars-header {
     padding: 0 !important;
 }
 
@@ -31,6 +31,63 @@ body {
     padding-right: 12px;
 }
 
+.lcars-sidebar-stack {
+    width: 100%;
+    margin: 0;
+}
+
+.lcars-sidebar-stack>* {
+    padding: 0;
+    margin: 0;
+}
+
+.lcars-sidebar-stack-right div div {
+    border-left: 3px solid black;
+}
+
+.lcars-sidebar-stack-left div div {
+    border-right: 3px solid black;
+}
+
+.lcars-sidebar-stack div div div span {
+    font-size: 1.5rem !important;
+}
+
+/** MAIN PANEL START **/
+
+.lcars-main{
+    max-height: 100vh;
+}
+
+.lcars-main-panel {
+    width: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 10px;
+}
+
+.lcars-main-panel::-webkit-scrollbar {
+    width: 10px;
+}
+
+.lcars-main-panel::-webkit-scrollbar-track {
+    border: 1px solid #5599ff;
+}
+
+.lcars-main-panel::-webkit-scrollbar-thumb {
+    background: #5599ff;
+}
+
+.lcars-table {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    color: #5599ff;
+}
+
+/** MAIN PANEL START **/
+
 .bg-blue-0 {
     background-color: #ccddff;
 }
@@ -38,6 +95,7 @@ body {
 .bg-blue-10 {
     background-color: #5599ff;
 }
+
 .text-blue-10 {
     color: #5599ff;
 }
@@ -45,8 +103,6 @@ body {
 .bg-blue-20 {
     background-color: #3366ff;
 }
-
-
 
 .bg-blue-30 {
     background-color: #0011ee;
@@ -87,7 +143,6 @@ body {
     border-top: 3px solid black;
     border-bottom: 3px solid black;
 }
-
 
 .col-v-0-5 {
     flex: 0 0 auto;

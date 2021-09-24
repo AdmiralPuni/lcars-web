@@ -21,8 +21,41 @@
                     <div class="col-v-2 bg-beige d-flex align-items-end flex-column">
                         <span class="mt-auto">AUX DIRECTORY</span>
                     </div>
-                    <div class="col-v-4 bg-blue-20 d-flex align-items-end flex-column">
-                        <span class="mt-auto">SYS DIRECTORY</span>
+                    <div class="col-v-4 bg-black d-flex align-items-end flex-column">
+                        <div class="row row-cols-2 g-2 lcars-sidebar-stack">
+                            <div class="col-6 lcars-sidebar-stack-left">
+                                <div class="row-v h-100 lcars-text-bottom align-text-bottom ">
+                                    <div class="col-v-3 bg-blue-20 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">SYSTEM</span>
+                                    </div>
+                                    <div class="col-v-3 bg-blue-30 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">AUXILARRY</span>
+                                    </div>
+                                    <div class="col-v-3 bg-blue-20 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">MEDICAL</span>
+                                    </div>
+                                    <div class="col-v-3 bg-blue-0 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">COMMUNICATIONS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 lcars-sidebar-stack-right">
+                                <div class="row-v h-100 lcars-text-bottom align-text-bottom ">
+                                    <div class="col-v-3 bg-blue-20 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">SYSTEM</span>
+                                    </div>
+                                    <div class="col-v-3 bg-blue-30 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">AUXILARRY</span>
+                                    </div>
+                                    <div class="col-v-3 bg-blue-20 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">MEDICAL</span>
+                                    </div>
+                                    <div class="col-v-3 bg-blue-0 d-flex align-items-end flex-column">
+                                        <span class="mt-auto">COMMUNICATIONS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-v-2 bg-beige d-flex align-items-end flex-column">
                         <span class="mt-auto">AUX DIRECTORY</span>
@@ -43,7 +76,7 @@
                     <div class="col-v-1 bg-blue-0 d-flex align-items-end flex-column">
                         <span class="mt-auto">COMMUNICATIONS</span>
                     </div>
-                    <div class="col-v-1 bg-beige d-flex align-items-end flex-column">
+                    <div class="col-v-1 bg-beige d-flex align-items-end flex-column" id="hide-table">
                         <span class="mt-auto">STELLAR CART</span>
                     </div>
                     <div class="col-v-2 bg-blue-10 d-flex align-items-end flex-column">
@@ -59,7 +92,7 @@
                     <div class="col-v-3-5 bg-black lcars-header">
                         <div class="row-v h-100 lcars-text-bottom align-text-bottom">
                             <div class="col-v-3 bg-black d-flex align-items-end flex-column">
-                                <span class="mt-auto text-blue-10 fs-1">USS SHOKAKU &#9679 LCARS ACCESS 99-111171</span>
+                                <span class="mt-auto text-blue-10 fs-1" id="lcars-title">USS SHOKAKU &#9679 LCARS ACCESS 99-111171</span>
                             </div>
                             <div class="col-v-6 bg-blue-30 d-flex align-items-end flex-column">
                                 <span class="mt-auto">31-4434</span>
@@ -75,8 +108,8 @@
                     <div class="col-v-0-5 bg-blue-20 d-flex align-items-end flex-column">
                         <span class="mt-auto">31-4434</span>
                     </div>
-                    <div class="col-v-7-5 bg-black">
-                        <span class="mt-auto">COMMUNICATIONS</span>
+                    <div class="col-v-7-5 bg-black lcars-main-panel" id="lcars-main-panel">
+
                     </div>
                 </div>
             </div>
@@ -85,5 +118,151 @@
 </body>
 <script src="res/js/bootstrap.min.js"></script>
 <script src="res/js/jquery-3.6.0.min.js"></script>
+<script>
+    var personnel = [
+        {
+            "id": "32744",
+            "name": "LT. CMDR. COMMODORE",
+            "last_location": "PLANITIA SMTHNG",
+            "scan": "92344"
+        }
+    ]
+
+    create_table(personnel);
+    $("#lcars-title").text("USS SHOKAKU ● LCARS ACCESS " + Date.now());
+
+    function create_table(data) {
+        $("#lcars-main-panel").html(`
+            <table class="lcars-table">
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+                <tr>
+                    <td>33453</td>
+                    <td>LT. CMDR. COMMODORE</td>
+                    <td>PLANITIA SMTHNG</td>
+                    <td>34233</td>
+                </tr>
+            </table>
+        `);
+    }
+</script>
 
 </html>
