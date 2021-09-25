@@ -3,12 +3,12 @@
     src: url("fonts/Okuda.otf") format("opentype");
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
-hr{
+hr {
     background-color: #5599ff;
     opacity: 100%;
     margin: 7px 0;
@@ -25,6 +25,8 @@ body {
 .lcars-container {
     width: calc(100vh * 1.777777777777778) !important;
     height: 100vh;
+    padding-top: var(--bs-gutter-y, 0.75rem);
+    padding-bottom: var(--bs-gutter-y, 0.75rem);
     padding-right: var(--bs-gutter-x, 0.75rem);
     padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
@@ -33,38 +35,25 @@ body {
     letter-spacing: 1.4px;
 }
 
-.lcars-header {
-    padding: 0 !important;
+.lcars-sidebar {
+    text-align: right;
+    vertical-align: bottom;
 }
 
-.lcars-sidebar div div span {
-    font-size: 2.5rem ;
-    padding-right: 12px;
+.lcars-button {
+    text-align: right !important;
+    border: 0;
 }
 
-.lcars-sidebar-stack {
-    width: 100%;
-    margin: 0;
+.lcars-button:active {
+    color: white;
+    background-color: black !important;
+    transition: all 0.3s
 }
 
-.lcars-sidebar-stack>* {
-    padding: 0;
-    margin: 0;
+.lcars-top-button{
+    border:3px solid black;
 }
-
-.lcars-sidebar-stack-right div div {
-    border-left: 3px solid black;
-}
-
-.lcars-sidebar-stack-left div div {
-    border-right: 3px solid black;
-}
-
-.lcars-sidebar-stack div div div span {
-    font-size: 1.5rem;
-}
-
-
 
 /** MAIN PANEL START **/
 
@@ -104,76 +93,29 @@ body {
 
 /** MAIN PANEL END **/
 
-.bg-blue-0 {
-    background-color: #ccddff;
-}
-
-.bg-blue-10 {
-    background-color: #5599ff;
-}
-
-.text-blue-10 {
-    color: #5599ff;
-}
-
-.bg-blue-20 {
-    background-color: #3366ff;
-}
-
-.bg-blue-30 {
-    background-color: #0011ee;
-}
-
-.bg-blue-40 {
-    background-color: #0411b6;
-}
-
-.bg-beige {
-    background-color: #bbaa55;
-}
-
-.text-beige {
-    color: #bbaa55;
-}
-
-.bg-purple {
-    background-color: #9999ff;
-}
-
-.bg-black {
-    background-color: black;
-}
-
-.bg-red-0{
-    background-color: #ff0101;
-}
-
-.bg-red-10{
-    background-color: #cc0101;
-}
-
-.bg-red-20{
-    background-color: #990000;
-}
-
-.bg-red-30{
-    background-color: #670100;
-}
-
-/** VERTICAL COLUMNS START **/
-
 .row-v {
-    --bs-gutter-x: 0;
     --bs-gutter-y: 1.5rem;
-    flex-wrap: wrap;
+    --bs-gutter-x: 0;
+    height: 100%;
 }
 
 .row-v>* {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
+    padding: 0;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
+    padding-right: 10px;
+}
+
+.col-v {
+    flex: 1 0 0%;
+}
+
+.col-v-auto {
+    flex: 0 0 auto;
+    height: auto;
 }
 
 .col-v-0-5 {
@@ -191,19 +133,9 @@ body {
     height: 16.66666667%;
 }
 
-.col-v-2-5 {
-    flex: 0 0 auto;
-    height: 20.833333335%;
-}
-
 .col-v-3 {
     flex: 0 0 auto;
     height: 25%;
-}
-
-.col-v-3-5 {
-    flex: 0 0 auto;
-    height: 29.166666665%;
 }
 
 .col-v-4 {
@@ -224,11 +156,6 @@ body {
 .col-v-7 {
     flex: 0 0 auto;
     height: 58.33333333%;
-}
-
-.col-v-7-5 {
-    flex: 0 0 auto;
-    height: 62.5%;
 }
 
 .col-v-8 {
@@ -260,5 +187,3 @@ body {
     flex: 0 0 auto;
     height: 100%;
 }
-
-/** VERTICAL COLUMNS END **/

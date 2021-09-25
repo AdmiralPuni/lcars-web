@@ -7,40 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LCARS</title>
     <link rel="stylesheet" href="res/css/bootstrap.min.css">
-    <link rel="stylesheet" href="res/css/lcars.css">
+    <link rel="stylesheet" href="res/css/lcars-2.css">
 </head>
 
 <body>
     <div class="lcars-container">
         <div class="row row-cols-2 g-2">
             <div class="col-2 lcars-sidebar">
-                <div class="row-v h-100 lcars-text-bottom align-text-bottom ">
-                    <div class="col-v-3 bg-black">
-                        <img src="res/images/federation.png" class="img-fluid" alt="">
+                <div class="row-v fs-1">
+                    <div class="col-v-3 p-0" >
+                        <img src="res/images/federation.png" class="img-fluid">
                     </div>
-                    <div class="col-v-1 bg-blue-20 d-flex align-items-end flex-column">
-                        <span class="mt-auto">ABOUT</span>
-                    </div>
-                    <div class="col-v-1 bg-red-0 d-flex align-items-end flex-column">
-                        <span class="mt-auto">LAYOUTS</span>
-                    </div>
-                    <div class="col-v-1 bg-red-0 d-flex align-items-end flex-column">
-                        <span class="mt-auto">TABLES</span>
-                    </div>
-                    <div class="col-v-1 bg-red-0 d-flex align-items-end flex-column" id="hide-table">
-                        <span class="mt-auto">INPUTS</span>
-                    </div>
-                    <div class="col-v-2 bg-blue-10 d-flex align-items-end flex-column">
-                        <span class="mt-auto">COLORS</span>
-                    </div>
-                    <div class="col-v-3 bg-beige d-flex align-items-end flex-column">
-                        <span class="mt-auto">ABOUT</span>
+                    <button class="col-v-1 bg-primary lcars-button">
+                        BUTTON
+                    </button>
+                    <button class="col-v-1 bg-warning lcars-button">
+                        BUTTON
+                    </button>
+                    <button class="col-v-1 bg-info lcars-button">
+                        BUTTON
+                    </button>
+                    <button class="col-v-1 bg-primary lcars-button">
+                        BUTTON
+                    </button>
+                    <button class="col-v-1 bg-primary lcars-button">
+                        BUTTON
+                    </button>
+                    <button class="col-v-2 bg-warning lcars-button">
+                        BUTTON
+                    </button>
+                    <div class="col-v-2 bg-danger">
+                        T13
                     </div>
                 </div>
+
             </div>
             <div class="col-10 lcars-main">
                 <div class="row-v h-100 lcars-text-bottom align-text-bottom ">
-                    <div class="col-v-1 bg-black text-blue-10 d-flex flex-row-reverse align-items-center" style="font-size: 4rem;">
+                    <div class="col-v-1 bg-black text-primary d-flex flex-row-reverse align-items-center" style="font-size: 4rem;">
                         USS SHOKAKU ● LCARS ACCESS 99-111171
                     </div>
                     <div class="col-v-2 bg-black">
@@ -49,40 +53,39 @@
 
                             </div>
                             <div class="col">
-                                <div class="row row-cols-md-2 g-2">
-                                    <div class="col bg-blue-10 d-flex align-items-end flex-column">
-                                        <span class="mt-auto">COLORS</span>
-                                    </div>
-                                    <div class="col bg-beige d-flex align-items-end flex-column">
-                                        <span class="mt-auto">ABOUT</span>
-                                    </div>
-                                    <div class="col bg-blue-10 d-flex align-items-end flex-column">
-                                        <span class="mt-auto">COLORS</span>
-                                    </div>
-                                    <div class="col bg-beige d-flex align-items-end flex-column">
-                                        <span class="mt-auto">ABOUT</span>
-                                    </div>
+                                <div class="row row-cols-md-2 fs-1">
+                                    <button class="col bg-primary lcars-button lcars-top-button">
+                                        BUTTON
+                                    </button>
+                                    <button class="col bg-warning lcars-button lcars-top-button">
+                                        BUTTON
+                                    </button>
+                                    <button class="col bg-danger lcars-button lcars-top-button">
+                                        BUTTON
+                                    </button>
+                                    <button class="col bg-info lcars-button lcars-top-button">
+                                        BUTTON
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-v-0-5 bg-blue-20 d-flex align-items-end flex-column">
+                    <div class="col-v-0-5 bg-primary d-flex align-items-end flex-column">
                         <span class="mt-auto">31-4434</span>
                     </div>
                     <div class="col-v-8-5 bg-black lcars-main-panel" id="lcars-main-panel">
+                        <span class="mt-auto text-primary fs-1">LCARS-WEB</span>
+                        <hr>
                         <div class="row">
-                            <div class="col-4 h-50">
+                            <div class="col-3">
                                 <img src="res/images/logpu.png" class="img-fluid" alt="">
                             </div>
-                            <div class="col-8 text-blue-10 h-50 fs-3">
-                                <span class="mt-auto text-blue-10 fs-1">LCARS-WEB</span>
-                                <hr>
+                            <div class="col-9 text-primary fs-3">
                                 Open source single page web theme based on LCARS, created using customized bootstrap
-                                
                             </div>
-                            <div class="col-12 bg-black h-50 fs-3">
-                                <span class="mt-auto text-blue-10 fs-1">GENERAL INFORMATION</span>
-                                <hr class="bg-blue-10">
+                            <div class="col-12 bg-black fs-3">
+                                <span class="mt-auto text-primary fs-1">GENERAL INFORMATION</span>
+                                <hr class="bg-primary">
                                 <table class="lcars-table">
                                     <tr>
                                         <td>LICENSE</td>
@@ -97,9 +100,9 @@
                                         <td><a href="https://admiralpuni.github.io/lcars-web/" target="_blank">https://admiralpuni.github.io/lcars-web/</a></td>
                                     </tr>
                                 </table>
-                                <span class="mt-auto text-beige fs-1">DESIGN</span>
-                                <hr class="bg-beige">
-                                <span class="text-beige">
+                                <span class="mt-auto text-warning fs-1">DESIGN</span>
+                                <hr class="bg-warning">
+                                <span class="text-warning">
                                     This theme is not supposed to be a perfect copy of LCARS from the old Star Trek series. this theme was created to fit
                                     a single screen 16x9 touch display or a control panel and designed to be a single page website. The text and buttons are
                                     larger than the original LCARS to make it easier to see and use from afar, and the rounded corners is too much of a hassle to style.
@@ -115,10 +118,16 @@
 <script src="res/js/bootstrap.min.js"></script>
 <script src="res/js/jquery-3.6.0.min.js"></script>
 <script>
+    var audio_button_click = new Audio("res/audio/computerbeep_5.mp3");
+
     $(document).ready(function () {
         $("#lcars-title").text("USS PUNIPUNI ● LCARS ACCESS " + Date.now());
         //$("#lcars-main-panel").html(create_table(databank));
     });
+    $(".lcars-button").click(function () {
+        audio_button_click.play();
+    });
+
     var personnel = [
         {
             "id": "32744",
