@@ -3,6 +3,17 @@
     src: url("fonts/Okuda.otf") format("opentype");
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
+hr{
+    background-color: #5599ff;
+    opacity: 100%;
+    margin: 7px 0;
+}
+
 body {
     background-color: black;
 }
@@ -27,7 +38,7 @@ body {
 }
 
 .lcars-sidebar div div span {
-    font-size: 2.5rem;
+    font-size: 2.5rem ;
     padding-right: 12px;
 }
 
@@ -50,7 +61,7 @@ body {
 }
 
 .lcars-sidebar-stack div div div span {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
 }
 
 /** MAIN PANEL START **/
@@ -64,7 +75,9 @@ body {
     max-height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding-left: 10px;
     padding-right: 10px;
+    text-align: left !important;
 }
 
 .lcars-main-panel::-webkit-scrollbar {
@@ -81,12 +94,13 @@ body {
 
 .lcars-table {
     width: 100%;
-    height: 100%;
+    height: auto;
     font-size: 2rem;
     color: #5599ff;
+    border-collapse: collapse;
 }
 
-/** MAIN PANEL START **/
+/** MAIN PANEL END **/
 
 .bg-blue-0 {
     background-color: #ccddff;
@@ -116,12 +130,32 @@ body {
     background-color: #bbaa55;
 }
 
+.text-beige {
+    color: #bbaa55;
+}
+
 .bg-purple {
     background-color: #9999ff;
 }
 
 .bg-black {
     background-color: black;
+}
+
+.bg-red-0{
+    background-color: #ff0101;
+}
+
+.bg-red-10{
+    background-color: #cc0101;
+}
+
+.bg-red-20{
+    background-color: #990000;
+}
+
+.bg-red-30{
+    background-color: #670100;
 }
 
 /** VERTICAL COLUMNS START **/
@@ -136,10 +170,6 @@ body {
     flex-shrink: 0;
     width: 100%;
     max-width: 100%;
-    font-size: 14pt;
-    font-weight: bold;
-    text-align: right;
-    vertical-align: text-bottom;
     border-top: 3px solid black;
     border-bottom: 3px solid black;
 }
