@@ -12,7 +12,7 @@
 
 <body>
     <div class="lcars-container">
-        <div class="row row-cols-2 g-2">
+        <div class="row row-cols-2 g-2" style="margin-left:0;margin-right:0;">
             <div class="col-2 lcars-sidebar">
                 <div class="row-v fs-1">
                     <div class="col-v-3 p-0">
@@ -74,13 +74,7 @@
                         <span class="mt-auto">31-4434</span>
                     </div>
                     <div class="col-v-8-5 bg-black lcars-main-panel" id="lcars-main-panel">
-                        <div class="h-50">
-                            <span class="mt-auto text-white fs-1">HYDROPONICS TEMPERATURE</span>
-                            <hr class="bg-primary">
-                            <svg viewBox="0 0 500 100" class="chart fs-6" id="chart-temperature">
-
-                            </svg>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -93,24 +87,30 @@
     var audio_button_click = new Audio("res/audio/computerbeep_5.mp3");
 
     $(document).ready(function () {
-        $("#lcars-title").text("USS PUNIPUNI ● LCARS ACCESS " + Date.now());
+        //$("#lcars-title").text("USS PUNIPUNI ● LCARS ACCESS " + Date.now());
+        $( "#lcars-main-panel" ).load( "ajax/test.html" );
         //$("#lcars-main-panel").html(create_table(databank));
+        /*
         $("#chart-temperature").html(svg_create_chart(temperature, 20));
+        $("#chart-humidity").html(svg_create_chart(humidity, 20));
         $(function () {
             random_temperature();
-
             function random_temperature() {
                 setTimeout(random_temperature, 500);
                 temperature.push(Math.floor(Math.random() * 50) + 20);
                 $("#chart-temperature").html(svg_create_chart(temperature, 20));
+                humidity.push(Math.floor(Math.random() * 100));
+                $("#chart-humidity").html(svg_create_chart(humidity, 20));
             }
         });
+        */
     });
     $(".lcars-button").click(function () {
         audio_button_click.play();
     });
 
-    var temperature = [30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 40 , 50];
+    var temperature = [30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 40, 50];
+    var humidity = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
     var personnel = [
         {
@@ -141,7 +141,7 @@
     function create_table(data) {
         var html = "<table class='lcars-table'>";
         $("#lcars-main-panel").html(``);
-        
+
         $.each(data, function (i, item) {
             html += "<tr id='data-" + i + "'>";
             $.each(item, function (i, value) {
@@ -156,17 +156,17 @@
     }
 
     function svg_create_chart(data, spacing) {
-        var x = spacing;
+        var x = 10;
         var points = "";
         var html = ``;
-        for (let i = data.length - 24; i < data.length; i++) {
-            points += x + "," + (80 - data[i]) + " ";
-            html += `<line x1="` + x + `" y1="85" x2="` + x + `" y2="` + (80 - data[i]) + `" style="stroke:#0074d9;stroke-width:1" />`;
-            html += `<text x="` + (x - 5) + `" y="100" fill="#FFFFFF">` + data[i] + `</text>`;
+        for (let i = data.length - 30; i < data.length; i++) {
+            points += x + "," + (110 - data[i]) + " ";
+            html += `<line x1="` + x + `" y1="115" x2="` + x + `" y2="` + (110 - data[i]) + `" style="stroke:#0074d9;stroke-width:1" />`;
+            html += `<text x="` + (x - 5) + `" y="130" fill="#FFFFFF">` + data[i] + `</text>`;
             x += spacing;
         }
         $.each(data, function (i, value) {
-            
+
         });
         html += `<polyline fill="none" stroke="#0074d9" stroke-width="2" id="chart-temperature-poly" points="` + points + `" />`
         return html;
