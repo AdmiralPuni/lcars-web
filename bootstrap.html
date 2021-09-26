@@ -15,7 +15,7 @@
         <div class="row row-cols-2 g-2">
             <div class="col-2 lcars-sidebar">
                 <div class="row-v fs-1">
-                    <div class="col-v-3 p-0" >
+                    <div class="col-v-3 p-0">
                         <img src="res/images/federation.png" class="img-fluid">
                     </div>
                     <button class="col-v-1 bg-primary lcars-button">
@@ -44,8 +44,8 @@
             </div>
             <div class="col-10 lcars-main">
                 <div class="row-v h-100 lcars-text-bottom align-text-bottom ">
-                    <div class="col-v-1 bg-black text-primary d-flex flex-row-reverse align-items-center" style="font-size: 4rem;">
-                        USS SHOKAKU ● LCARS ACCESS 99-111171
+                    <div class="col-v-1 bg-black text-white d-flex flex-row-reverse align-items-center" style="font-size: 4rem;">
+                        NX-1711 TRIANGULUM ● LCARS ACCESS 99-111171
                     </div>
                     <div class="col-v-2 bg-black">
                         <div class="row">
@@ -74,40 +74,12 @@
                         <span class="mt-auto">31-4434</span>
                     </div>
                     <div class="col-v-8-5 bg-black lcars-main-panel" id="lcars-main-panel">
-                        <span class="mt-auto text-primary fs-1">LCARS-WEB</span>
-                        <hr>
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="res/images/logpu.png" class="img-fluid" alt="">
-                            </div>
-                            <div class="col-9 text-primary fs-3">
-                                Open source single page web theme based on LCARS, created using customized bootstrap
-                            </div>
-                            <div class="col-12 bg-black fs-3">
-                                <span class="mt-auto text-primary fs-1">GENERAL INFORMATION</span>
-                                <hr class="bg-primary">
-                                <table class="lcars-table">
-                                    <tr>
-                                        <td>LICENSE</td>
-                                        <td>GNU General Public License v2.0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>GITHUB</td>
-                                        <td><a href="https://github.com/AdmiralPuni/lcars-web" target="_blank">https://github.com/AdmiralPuni/lcars-web/</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>PREVIEW</td>
-                                        <td><a href="https://admiralpuni.github.io/lcars-web/" target="_blank">https://admiralpuni.github.io/lcars-web/</a></td>
-                                    </tr>
-                                </table>
-                                <span class="mt-auto text-warning fs-1">DESIGN</span>
-                                <hr class="bg-warning">
-                                <span class="text-warning">
-                                    This theme is not supposed to be a perfect copy of LCARS from the old Star Trek series. this theme was created to fit
-                                    a single screen 16x9 touch display or a control panel and designed to be a single page website. The text and buttons are
-                                    larger than the original LCARS to make it easier to see and use from afar, and the rounded corners is too much of a hassle to style.
-                                </span>
-                            </div>
+                        <div class="h-50">
+                            <span class="mt-auto text-white fs-1">HYDROPONICS TEMPERATURE</span>
+                            <hr class="bg-primary">
+                            <svg viewBox="0 0 500 100" class="chart fs-6" id="chart-temperature">
+
+                            </svg>
                         </div>
                     </div>
                 </div>
@@ -123,10 +95,22 @@
     $(document).ready(function () {
         $("#lcars-title").text("USS PUNIPUNI ● LCARS ACCESS " + Date.now());
         //$("#lcars-main-panel").html(create_table(databank));
+        $("#chart-temperature").html(svg_create_chart(temperature, 20));
+        $(function () {
+            random_temperature();
+
+            function random_temperature() {
+                setTimeout(random_temperature, 500);
+                temperature.push(Math.floor(Math.random() * 50) + 20);
+                $("#chart-temperature").html(svg_create_chart(temperature, 20));
+            }
+        });
     });
     $(".lcars-button").click(function () {
         audio_button_click.play();
     });
+
+    var temperature = [30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 40 , 50];
 
     var personnel = [
         {
@@ -157,6 +141,7 @@
     function create_table(data) {
         var html = "<table class='lcars-table'>";
         $("#lcars-main-panel").html(``);
+        
         $.each(data, function (i, item) {
             html += "<tr id='data-" + i + "'>";
             $.each(item, function (i, value) {
@@ -167,6 +152,23 @@
             html += "</tr>";
         });
         html += "</table>";
+        return html;
+    }
+
+    function svg_create_chart(data, spacing) {
+        var x = spacing;
+        var points = "";
+        var html = ``;
+        for (let i = data.length - 24; i < data.length; i++) {
+            points += x + "," + (80 - data[i]) + " ";
+            html += `<line x1="` + x + `" y1="85" x2="` + x + `" y2="` + (80 - data[i]) + `" style="stroke:#0074d9;stroke-width:1" />`;
+            html += `<text x="` + (x - 5) + `" y="100" fill="#FFFFFF">` + data[i] + `</text>`;
+            x += spacing;
+        }
+        $.each(data, function (i, value) {
+            
+        });
+        html += `<polyline fill="none" stroke="#0074d9" stroke-width="2" id="chart-temperature-poly" points="` + points + `" />`
         return html;
     }
 </script>
