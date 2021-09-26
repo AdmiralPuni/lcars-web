@@ -18,8 +18,8 @@
                     <div class="col-v-3 p-0">
                         <img src="res/images/federation.png" class="img-fluid">
                     </div>
-                    <button class="col-v-1 bg-primary lcars-button">
-                        BUTTON
+                    <button class="col-v-1 bg-primary lcars-button" onClick="load_to_main(3)">
+                        HOME
                     </button>
                     <button class="col-v-1 bg-warning lcars-button">
                         BUTTON
@@ -33,12 +33,12 @@
                     <button class="col-v-1 bg-primary lcars-button">
                         BUTTON
                     </button>
-                    <button class="col-v-2 bg-warning lcars-button">
-                        BUTTON
+                    <button class="col-v-2 bg-success lcars-button" onClick="load_to_main(2)">
+                        GRAPH
                     </button>
-                    <div class="col-v-2 bg-danger">
-                        T13
-                    </div>
+                    <button class="col-v-2 bg-primary lcars-button" onClick="load_to_main(1)">
+                        ABOUT
+                    </button>
                 </div>
 
             </div>
@@ -74,7 +74,7 @@
                         <span class="mt-auto">31-4434</span>
                     </div>
                     <div class="col-v-8-5 bg-black lcars-main-panel" id="lcars-main-panel">
-                        
+
                     </div>
                 </div>
             </div>
@@ -88,11 +88,10 @@
 
     $(document).ready(function () {
         //$("#lcars-title").text("USS PUNIPUNI ● LCARS ACCESS " + Date.now());
-        $( "#lcars-main-panel" ).load( "ajax/test.html" );
+        //$( "#lcars-main-panel" ).load( "https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/about.html" );
         //$("#lcars-main-panel").html(create_table(databank));
         /*
-        $("#chart-temperature").html(svg_create_chart(temperature, 20));
-        $("#chart-humidity").html(svg_create_chart(humidity, 20));
+        
         $(function () {
             random_temperature();
             function random_temperature() {
@@ -108,6 +107,27 @@
     $(".lcars-button").click(function () {
         audio_button_click.play();
     });
+
+    function load_to_main(index) {
+        $("#lcars-main-panel").hide();
+        $("#lcars-main-panel").fadeToggle(300);
+        switch (index) {
+            case 1:
+                $("#lcars-main-panel").load("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/about.html");
+                break;
+            case 2:
+                $("#lcars-main-panel").load("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/graph.html", function () {
+                    $("#chart-temperature").html(svg_create_chart(temperature, 20));
+                    $("#chart-humidity").html(svg_create_chart(humidity, 20));
+                });
+
+                break;
+            case 3:
+                $("#lcars-main-panel").load("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/home.html");
+                break;
+        }
+
+    }
 
     var temperature = [30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 40, 50];
     var humidity = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
@@ -159,7 +179,7 @@
         var x = 10;
         var points = "";
         var html = ``;
-        for (let i = data.length - 30; i < data.length; i++) {
+        for (let i = data.length - data.length; i < data.length; i++) {
             points += x + "," + (110 - data[i]) + " ";
             html += `<line x1="` + x + `" y1="115" x2="` + x + `" y2="` + (110 - data[i]) + `" style="stroke:#0074d9;stroke-width:1" />`;
             html += `<text x="` + (x - 5) + `" y="130" fill="#FFFFFF">` + data[i] + `</text>`;
