@@ -12,40 +12,40 @@
 
 <body>
     <div class="lcars-container">
-        <div class="row row-cols-2 g-2" style="margin-left:0;margin-right:0;">
+        <div class="row row-cols-2 g-2" style="margin-left:0;margin-right:0;max-height: 100% !important;">
             <div class="col-2 lcars-sidebar">
                 <div class="row-v fs-1">
                     <div class="col-v-3 p-0">
                         <img src="res/images/federation.png" class="img-fluid">
                     </div>
-                    <button class="col-v-1 bg-primary lcars-button" onClick="load_to_main(3)">
+                    <button class="col-v-1 bg-blue-20 lcars-button" onClick="load_to_main(3)">
                         HOME
                     </button>
-                    <button class="col-v-1 bg-warning lcars-button">
+                    <button class="col-v-1 bg-red-0 lcars-button">
                         BUTTON
                     </button>
-                    <button class="col-v-1 bg-info lcars-button">
+                    <button class="col-v-1 bg-red-0 lcars-button">
                         BUTTON
                     </button>
-                    <button class="col-v-1 bg-primary lcars-button">
+                    <button class="col-v-1 bg-red-0 lcars-button">
                         BUTTON
                     </button>
-                    <button class="col-v-1 bg-primary lcars-button">
-                        BUTTON
+                    <button class="col-v-1 bg-blue-0 lcars-button" onClick="load_to_main(4)">
+                        TABLE
                     </button>
-                    <button class="col-v-2 bg-success lcars-button" onClick="load_to_main(2)">
+                    <button class="col-v-2 bg-beige lcars-button" onClick="load_to_main(2)">
                         GRAPH
                     </button>
-                    <button class="col-v-2 bg-primary lcars-button" onClick="load_to_main(1)">
+                    <button class="col-v-2 bg-blue-20 lcars-button" onClick="load_to_main(1)">
                         ABOUT
                     </button>
                 </div>
 
             </div>
-            <div class="col-10 lcars-main">
+            <div class="col-10 lcars-main" style="max-height: 100% !important;">
                 <div class="row-v h-100 lcars-text-bottom align-text-bottom ">
                     <div class="col-v-1 bg-black text-white d-flex flex-row-reverse align-items-center" style="font-size: 4rem;">
-                        NX-1711 TRIANGULUM ● LCARS ACCESS 99-111171
+                        NX-28 TRIANGULUM ● LCARS ACCESS 99-111171
                     </div>
                     <div class="col-v-2 bg-black">
                         <div class="row">
@@ -54,27 +54,42 @@
                             </div>
                             <div class="col">
                                 <div class="row row-cols-md-2 fs-1">
-                                    <button class="col bg-primary lcars-button lcars-top-button">
+                                    <button class="col bg-blue-20 lcars-button lcars-top-button">
                                         BUTTON
                                     </button>
-                                    <button class="col bg-warning lcars-button lcars-top-button">
+                                    <button class="col bg-beige lcars-button lcars-top-button">
                                         BUTTON
                                     </button>
-                                    <button class="col bg-danger lcars-button lcars-top-button">
+                                    <button class="col bg-red-0 lcars-button lcars-top-button">
                                         BUTTON
                                     </button>
-                                    <button class="col bg-info lcars-button lcars-top-button">
+                                    <button class="col bg-blue-10 lcars-button lcars-top-button">
                                         BUTTON
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-v-0-5 bg-primary d-flex align-items-end flex-column">
-                        <span class="mt-auto">31-4434</span>
+                    <div class="col-v-0-5 bg-blue-20" style="padding:0;">
+                        <div class="row g-0 text-dark fs-4 text-center lcars-separator">
+                            <div class="col" style="border-left: 0;">
+                                123
+                            </div>
+                            <div class="col">
+                                345
+                            </div>
+                            <div class="col">
+                                345
+                            </div>
+                            <div class="col" style="border-right: 0;">
+                                567
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-v-8-5 bg-black lcars-main-panel" id="lcars-main-panel">
+                    <div class="col-v-8-5 bg-black">
+                        <div class="lcars-main-panel" id="lcars-main-panel">
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,6 +100,11 @@
 <script src="res/js/jquery-3.6.0.min.js"></script>
 <script>
     var audio_button_click = new Audio("res/audio/computerbeep_5.mp3");
+    var preloaded_html = [];
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/about.html",0);
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/graph.html",1);
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/home.html",2);
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/table.html",3);
 
     $(document).ready(function () {
         //$("#lcars-title").text("USS PUNIPUNI ● LCARS ACCESS " + Date.now());
@@ -109,24 +129,20 @@
     });
 
     function load_to_main(index) {
-        $("#lcars-main-panel").hide();
-        $("#lcars-main-panel").fadeToggle(300);
-        switch (index) {
-            case 1:
-                $("#lcars-main-panel").load("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/about.html");
-                break;
-            case 2:
-                $("#lcars-main-panel").load("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/graph.html", function () {
-                    $("#chart-temperature").html(svg_create_chart(temperature, 20));
-                    $("#chart-humidity").html(svg_create_chart(humidity, 20));
-                });
+        $("#lcars-main-panel").fadeToggle(300, function () {
+            $("#lcars-main-panel").fadeToggle(300);
+            $("#lcars-main-panel").html(preloaded_html[index + -1]);
+            if (index == 2) {
+                $("#chart-temperature").html(svg_create_chart(temperature, 20));
+                $("#chart-humidity").html(svg_create_chart(humidity, 20));
+            }
+        });
+    }
 
-                break;
-            case 3:
-                $("#lcars-main-panel").load("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/home.html");
-                break;
-        }
-
+    function preload_html(url, index) {
+        $.get(url, function (data) {
+            preloaded_html[index] = data;
+        });
     }
 
     var temperature = [30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 30, 32, 27, 31, 33, 29, 40, 27, 21, 29, 31, 29, 40, 50];

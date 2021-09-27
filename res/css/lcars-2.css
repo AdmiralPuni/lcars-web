@@ -34,6 +34,7 @@ body {
 .lcars-sidebar {
     text-align: right;
     vertical-align: bottom;
+    max-height: 100% !important;
 }
 
 .lcars-button {
@@ -47,19 +48,26 @@ body {
     transition: all 0.3s
 }
 
-.lcars-top-button{
-    border:3px solid black;
+.lcars-top-button {
+    border: 3px solid black;
+}
+
+.lcars-separator>* {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
 }
 
 /** MAIN PANEL START **/
 
-.lcars-main{
-    max-height: 100vh;
+.lcars-main {
+    max-height: 100% !important;
 }
 
 .lcars-main-panel {
     width: 100%;
-    max-height: 100%;
+    height: 100%;
+    max-width: 100% !important;
+    max-height: 100% !important;
     overflow-y: scroll;
     overflow-x: hidden;
     padding-left: 10px;
@@ -183,3 +191,63 @@ body {
     flex: 0 0 auto;
     height: 100%;
 }
+
+/* COLORS START */
+
+.bg-blue-0 {
+    background-color: #ccddff;
+}
+
+.bg-blue-10 {
+    background-color: #5599ff;
+}
+
+.text-blue-10 {
+    color: #5599ff;
+}
+
+.bg-blue-20 {
+    background-color: #3366ff;
+}
+
+.bg-blue-30 {
+    background-color: #0011ee;
+}
+
+.bg-blue-40 {
+    background-color: #0411b6;
+}
+
+.bg-beige {
+    background-color: #bbaa55;
+}
+
+.text-beige {
+    color: #bbaa55;
+}
+
+.bg-purple {
+    background-color: #9999ff;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.bg-red-0 {
+    background-color: #ff0101;
+}
+
+.bg-red-10 {
+    background-color: #cc0101;
+}
+
+.bg-red-20 {
+    background-color: #990000;
+}
+
+.bg-red-30 {
+    background-color: #670100;
+}
+
+/* COLORS END*/
