@@ -95,6 +95,25 @@ body {
     border-collapse: collapse;
 }
 
+.lcars-display-description{
+    height: 100%;
+    max-height: 100% !important;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.lcars-display-description::-webkit-scrollbar {
+    width: 10px;
+}
+
+.lcars-display-description::-webkit-scrollbar-track {
+    border: 1px solid #5599ff;
+}
+
+.lcars-display-description::-webkit-scrollbar-thumb {
+    background: #5599ff;
+}
+
 /** MAIN PANEL END **/
 
 .row-v {

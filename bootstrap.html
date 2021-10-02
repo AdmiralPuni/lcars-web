@@ -88,7 +88,26 @@
                     </div>
                     <div class="col-v-8-5 bg-black">
                         <div class="lcars-main-panel" id="lcars-main-panel">
+                            <!--
+                            <div class="h-100 w-100 fs-2 text-white" id="load_status">
+                                Preloading pages...
+                                <br>
+                            </div>
+                            -->
+                            <div class="row">
+                                <div class="col-8 lcars-display-image">
+                                    <img src="res/images/federation.png" class="img-fluid" style="margin:0 auto;">
+                                </div>
+                                <div class="col-4 text-blue-10 lcars-display-description">
+                                    <span class="fs-2 ">EIFFEL TOWER</span>
+                                    <hr>
+                                    <span class="fs-4 ">
+                                        The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower.
 
+                                        It was constructed from 1887 to 1889 as the entrance to the 1889 World's Fair and was initially criticised by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognisable structures in the world.[3] The Eiffel Tower is the most visited monument with an entrance fee in the world; 6.91 million people ascended it in 2015.
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,10 +120,10 @@
 <script>
     var audio_button_click = new Audio("res/audio/computerbeep_5.mp3");
     var preloaded_html = [];
-    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/about.html",0);
-    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/graph.html",1);
-    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/home.html",2);
-    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/table.html",3);
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/about.html", 0);
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/graph.html", 1);
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/home.html", 2);
+    preload_html("https://raw.githubusercontent.com/AdmiralPuni/lcars-web/main/pages/table.html", 3);
 
     $(document).ready(function () {
         //$("#lcars-title").text("USS PUNIPUNI ● LCARS ACCESS " + Date.now());
@@ -142,6 +161,7 @@
     function preload_html(url, index) {
         $.get(url, function (data) {
             preloaded_html[index] = data;
+            $("#load_status").append(url + "<br>");
         });
     }
 
